@@ -1,0 +1,110 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Background for Login and Signup Pages */
+.login-bg, .signup-bg {
+    background: linear-gradient(45deg, #ff9a8b, #dba9c1);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login and Signup Container */
+.login-container, .signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box, .signup-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 380px;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Header Styling */
+.login-header, .signup-header {
+    background-color: #2575fc;
+    color: white;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+}
+
+.login-header h2, .signup-header h2 {
+    margin: 0;
+}
+
+.login-icon, .signup-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Input Fields */
+.input-group {
+    margin: 15px 0;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #2575fc;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #6a11cb;
+}
+
+/* Links */
+.signup-link, .login-link {
+    color: #2575fc;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.signup-link:hover, .login-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styling */
+@media (max-width: 480px) {
+    .login-box, .signup-box {
+        width: 90%;
+    }
+}
