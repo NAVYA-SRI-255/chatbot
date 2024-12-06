@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome, {{ username }}!</h1>
+<div>
+    <div id="chat-box">
+        <!-- Chat messages will appear here -->
+    </div>
+    <form id="chat-form">
+        <input type="text" name="message" placeholder="Type your message" required>
+        <button type="submit">Send</button>
+    </form>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+<script>
+    const chatForm = document.getElementById('chat-form');
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const message = chatForm.message.value;
+        const response = await fetch('/chat', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ message })
+        });
+        const data = await response.json();
+        document.getElementById('chat-box').innerHTML += `<p>You: ${message}</p><p>Bot: ${data.response}</p>`;
+        chatForm.reset();
+    });
+</script>
+{% endblock %}
